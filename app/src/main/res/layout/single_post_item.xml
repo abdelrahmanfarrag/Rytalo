@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        android:background="@android:color/holo_green_dark"
+        android:padding="10dp"
+        android:text="Hourly = $250.00"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/job_type"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:text="Photograph Sercveral Selected Location"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="44dp"
+        android:drawableLeft="@mipmap/loc"
+        android:padding="5dp"
+        android:text=" New York"
+        app:layout_constraintStart_toStartOf="@+id/job_type"
+        app:layout_constraintTop_toBottomOf="@id/price" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tags_recycler"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/job_type">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/image_recycler"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tags_recycler"
+        app:layout_constraintTop_toBottomOf="@+id/tags_recycler"></android.support.v7.widget.RecyclerView>
+    <Button
+        android:id="@+id/imageView"
+        android:layout_width="24dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/light_gray"
+        android:drawableLeft="@mipmap/add_btn"
+        android:paddingLeft="5dp"
+        app:layout_constraintLeft_toRightOf="@+id/tags_recycler"
+        app:layout_constraintTop_toBottomOf="@+id/job_type" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="28dp"
+        android:background="@mipmap/menu_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/add_tags"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/job_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="JOB STATUS"
+        android:textColor="@color/job_open"
+        app:layout_constraintTop_toBottomOf="@+id/image_recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="192dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/light_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/job_status" />
+
+</android.support.constraint.ConstraintLayout>

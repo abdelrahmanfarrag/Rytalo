@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/off_white">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <include
+                android:id="@+id/activity_bar"
+                layout="@layout/app_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/main_tabs"
+                android:layout_width="match_parent"
+                app:tabIndicatorColor="@color/blue"
+                app:tabSelectedTextColor="@color/blue"
+                android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/tabs_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_tabs"
+            android:layout_marginTop="50dp"
+            app:layout_constraintVertical_bias="0.538"></android.support.v4.view.ViewPager>
+    </android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/main_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigationheader"
+        app:menu="@menu/navigation_menu">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="540dp"
+            android:layout_marginLeft="20dp"
+            android:text="Sign Out"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_background"
+            android:textColor="@android:color/white"
+            android:text="3"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="353dp"
+            android:layout_marginLeft="60dp"
+            android:textAlignment="center"
+            android:padding="5dp"/>
+    </android.support.design.widget.NavigationView>
+
+   </android.support.v4.widget.DrawerLayout>
