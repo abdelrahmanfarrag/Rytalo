@@ -35,16 +35,21 @@ public class PostFragment extends Fragment implements ui_contract {
         v= inflater.inflate(R.layout.post_fragment,container,false);
         presenter= new PostPresenter(getActivity(),this);
         realm = CommonMethods.RealmInit(getActivity());
-   /*  presenter.setDataToDatabase(realm,"PHOTOGRAPHS SEVERAL SELECTED LOCATIONS","NEW YORK","Fixed = $250.00",
+    presenter.setDataToDatabase(realm,"PHOTOGRAPHS SEVERAL SELECTED LOCATIONS","NEW YORK","Fixed = $250.00",
                "Job Open","Fixed");
         presenter.setDataToDatabase(realm,"Videograph Special Events","Los Angelos","Hourly = $22.00",
                 "In Review","Hourly");
         presenter.setDataToDatabase(realm,"PHOTOGRAPHS SEVERAL SELECTED LOCATIONS","NEW YORK","Fixed = $250.00",
-                "Job Open","Fixed");*/
+                "Job Open","Fixed");
 
         posts= v.findViewById(R.id.posts_view);
+   /*     CommonMethods.DeleteAllData(realm,ImagesTable.class,getActivity());
+        CommonMethods.DeleteAllData(realm,Table_Datamodel.class,getActivity());
+        CommonMethods.DeleteAllData(realm,Tags_Table.class,getActivity());*/
 
         CommonMethods.RecyclerView_Settings(getActivity(),posts);
+
+
 
         presenter.LoadData();
         return v;
@@ -62,5 +67,6 @@ public class PostFragment extends Fragment implements ui_contract {
     public void Image(List<ImagesTable> images) {
 
     }
+
 
 }

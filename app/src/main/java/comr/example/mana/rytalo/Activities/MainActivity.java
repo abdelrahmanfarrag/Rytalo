@@ -13,6 +13,10 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import comr.example.mana.rytalo.Adapters.PagerAdapter;
+import comr.example.mana.rytalo.Helpers.CommonMethods;
+import comr.example.mana.rytalo.Models.ImagesTable;
+import comr.example.mana.rytalo.Models.Table_Datamodel;
+import comr.example.mana.rytalo.Models.Tags_Table;
 import comr.example.mana.rytalo.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -112,5 +116,13 @@ public class MainActivity extends AppCompatActivity {
         else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        CommonMethods.DeleteAllData(CommonMethods.RealmInit(getApplicationContext()),ImagesTable.class,getApplicationContext());
+        CommonMethods.DeleteAllData(CommonMethods.RealmInit(getApplicationContext()),Table_Datamodel.class,getApplicationContext());
+        CommonMethods.DeleteAllData(CommonMethods.RealmInit(getApplicationContext()),Tags_Table.class,getApplicationContext());
     }
 }
